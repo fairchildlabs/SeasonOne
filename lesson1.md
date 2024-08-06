@@ -13,26 +13,35 @@ You can also enable SSH using the Raspberry P
 ##4. Get the IP Address:
 `$ ip address`
 ##5. Set root password
-Open Terminal
-`$ sudo passwd root`
-LAB_PASSWORD (twice)
-##6. hostnamectl set-hostname YOUR_PI_NAME
 
+Open Terminal
+
+`$ sudo passwd root`
+
+LAB_PASSWORD (twice)
+
+##6. Set Pi Name
+hostnamectl set-hostname YOUR_PI_NAME
+##7. Allow SSH Root Login
+
+`$ sudo nano /etc/ssh/sshd_config`
 
 Change: 
 #PermitRootLogin prohibit-password
 To:
 PermitRootLogin yes
 Exit (Ctl-X)
---------------------------------------------------------------------------------------
 
-https://help.dreamhost.com/hc/en-us/articles/215464758-Set-up-passwordless-login-in-PuTTY
+##8. Set up SSH Login
 
-//lab keys
-wget http://13.64.77.78/keys/pi_key
+Complete Article for furture reference: https://help.dreamhost.com/hc/en-us/articles/215464758-Set-up-passwordless-login-in-PuTTY
+
+`$ cd ~
+$ wget http://13.64.77.78/keys/pi_key
 mkdir .ssh
 chmod 700 .ssh
-ssh-keygen -i -f pi_key >> ~/.ssh/authorized_keys
+ssh-keygen -i -f pi_key >> ~/.ssh/authorized_keys`
+
 ---------------------------------------------------------------------------------------
 Putty Config (Manual user - demonstrate | SSH | Auth
 ----------------------------------------------------------------------------------------
