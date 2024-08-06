@@ -9,13 +9,9 @@ Click the Interfaces tab
 Select Enable in the SSH options
 Click OK to save the changes 
 You can also enable SSH using the Raspberry P
+#4. Get the IP Address:
+`$ ip address`
 
-
-
-
---------------------------------------------------------------------------------------
-Get the IP Address:
->>ip address
 --------------------------------------------------------------------------------------
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 SET ROOT Password
