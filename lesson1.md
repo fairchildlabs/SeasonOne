@@ -1,5 +1,5 @@
-
 #Lesson One
+
 ##1. Install micro-SD card.
 ##2. Plug in keyboard, mouse and video.
 ##3. Enable SSH 
@@ -10,7 +10,7 @@ Click the Interfaces tab
 Select Enable in the SSH options
 Click OK to save the changes 
 You can also enable SSH using the Raspberry P
-##4. Get the IP Address:
+##4. Get the IP Address (referred to below as pi.ip.addre.ss)
 `$ ip address`
 ##5. Set root password
 
@@ -27,36 +27,38 @@ hostnamectl set-hostname YOUR_PI_NAME
 `$ sudo nano /etc/ssh/sshd_config`
 
 Change: 
-#PermitRootLogin prohibit-password
+PermitRootLogin prohibit-password
+
 To:
 PermitRootLogin yes
+
 Exit (Ctl-X)
 
 ##8. Set up SSH Login
 
 Complete Article for furture reference: https://help.dreamhost.com/hc/en-us/articles/215464758-Set-up-passwordless-login-in-PuTTY
 
-`$ cd ~
-$ wget http://13.64.77.78/keys/pi_key
-mkdir .ssh
-chmod 700 .ssh
-ssh-keygen -i -f pi_key >> ~/.ssh/authorized_keys`
+`$ cd ~`
+`$ wget http://13.64.77.78/keys/pi_key`
+`$ mkdir .ssh`
+`$ chmod 700 .ssh`
+`$ ssh-keygen -i -f pi_key >> ~/.ssh/authorized_keys`
 
----------------------------------------------------------------------------------------
-Putty Config (Manual user - demonstrate | SSH | Auth
-----------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------
-Install and test apache (web server)
-----------------------------------------------------------------------------------------
+##9. Putty Config (demonstration)
 
-apt install apache2 -y
+##10. Install and test apache (web server)
+
+`$ apt install apache2 -y`
+
+Test it, put the pi address in PC browser 
+
 http://pi.ip.addre.ss/
 
----------------------------------------------------------------------------------------
-Shutdown PI and install USB Camera (video.....)
----------------------------------------------------------------------------------------
->>lsusb
+#11. Shutdown PI and install USB Camera (video.....)
+
+`$ lsusb`
 Bus 003 Device 003: ID 328f:0073 EMEET HD Webcam eMeet C950
+
 >>apt install fswebcam
 Take a picture
 >> fswebcam -r 1280x720 --no-banner /var/www/html/1.jpg
