@@ -39,9 +39,13 @@ Exit (Ctl-X)
 Complete Article for furture reference: https://help.dreamhost.com/hc/en-us/articles/215464758-Set-up-passwordless-login-in-PuTTY
 
 `$ cd ~`
+
 `$ wget http://13.64.77.78/keys/pi_key`
+
 `$ mkdir .ssh`
+
 `$ chmod 700 .ssh`
+
 `$ ssh-keygen -i -f pi_key >> ~/.ssh/authorized_keys`
 
 ##9. Putty Config (demonstration)
