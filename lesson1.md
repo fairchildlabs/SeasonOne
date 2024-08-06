@@ -61,15 +61,27 @@ http://pi.ip.addre.ss/
 #11. Shutdown PI and install USB Camera (video.....)
 
 `$ lsusb`
+
 Bus 003 Device 003: ID 328f:0073 EMEET HD Webcam eMeet C950
 
->>apt install fswebcam
+`$ apt install fswebcam`
+
 Take a picture
->> fswebcam -r 1280x720 --no-banner /var/www/html/1.jpg
-http://pi.ip.addre.ss/
->> ls -l /var/www/html/1.jpg
+
+`$ fswebcam -r 1280x720 --no-banner /var/www/html/1.jpg`
+
+View it in browser
+
+http://pi.ip.addre.ss/1.jpg
+
+Look at the file it created 
+
+`$ ls -l /var/www/html/1.jpg`
+
 -rw-r--r-- 1 root root 185255 Aug  4 14:11 /var/www/html/1.jpg
 (Size in bytes 185255)
+
+
 >> fswebcam -r 3840x288 --no-banner /var/www/html/1s.jpg
 >> ls -l /var/www/html/1s.jpg
 -rw-r--r-- 1 root root 130609 Aug  4 14:19 /var/www/html/1s.jpg
