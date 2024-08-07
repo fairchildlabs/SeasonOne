@@ -79,14 +79,18 @@ Look at the file it created
 `$ ls -l /var/www/html/1.jpg`
 
 -rw-r--r-- 1 root root 185255 Aug  4 14:11 /var/www/html/1.jpg
+
 (Size in bytes 185255)
 
 
->> fswebcam -r 3840x288 --no-banner /var/www/html/1s.jpg
->> ls -l /var/www/html/1s.jpg
+`$ fswebcam -r 3840x288 --no-banner /var/www/html/1s.jpg`
+
+`$ ls -l /var/www/html/1s.jpg`
+
 -rw-r--r-- 1 root root 130609 Aug  4 14:19 /var/www/html/1s.jpg
 
-Get more detail
+##12. Get more detail about camera
+
 >> v4l2-ctl --list-formats-ext > /var/www/html/usbresolution.txt
 
 Check it out in browser (for future reference)
@@ -133,7 +137,7 @@ apt install ffmpeg
 
 
 
-ffmpeg -f v4l2 -framerate 25 -video_size 640x480 -i /dev/video0 output.mkv
+ffmpeg -f v4l2 -framerate 25 -video_size 640x480 -i /dev/video0 output.mp4
 
 
 
@@ -162,7 +166,7 @@ apt-get install motion
 
 
 
-
+ffmpeg -f dshow -framerate 15 -i video="USB Video Device":audio="Microphone (USB Audio Device)" -s 640x360 -c:v libx264 -g 15 -c:a aac -preset veryfast -segment_time 10 -segment_wrap 24 -f segment %03d.ts
 
 
 
