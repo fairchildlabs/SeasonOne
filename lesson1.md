@@ -96,6 +96,8 @@ Look at the file it created
 Check it out in browser (for future reference)
 http://192.168.1.149/usbresolution.txt
 
+`
+
 
 fswebcam -r 640x480 --no-banner /var/www/html/640x480.jpg
 fswebcam -r 1920x1080 --no-banner /var/www/html/1920x1080.jpg
@@ -106,7 +108,7 @@ fswebcam -r 800x600 --no-banner /var/www/html/800x600.jpg
 fswebcam -r 640x360 --no-banner /var/www/html/640x360.jpg
 fswebcam -r 640x480 --no-banner /var/www/html/640x480.jpg
 
-ls -l /var/www/html
+$ ls -l /var/www/html
 
 
 -rw-r--r-- 1 root root 220087 Aug  4 14:28 1024x576.jpg
@@ -122,7 +124,7 @@ ls -l /var/www/html
 -rw-r--r-- 1 root root 190412 Aug  4 14:29 800x600.jpg
 -rw-r--r-- 1 root root  10701 Aug  4 12:52 index.html
 -rw-r--r-- 1 root root   1197 Aug  4 14:23 usbresolution.txt
-
+`
 
 
 //look on browser
@@ -135,13 +137,46 @@ http://fairchildlabs.org/early/resolution.xlsx
 apt install ffmpeg
 
 
+###ffmpeg Documntation
+
+https://www.ffmpeg.org/ffmpeg.html
+
+Help Files 
 
 
-ffmpeg -f v4l2 -framerate 25 -video_size 640x480 -i /dev/video0 output.mp4
+
+
+http://fairchildlabs.org/SeasonOne/ref/ffmpeg.txt
+http://fairchildlabs.org/SeasonOne/ref/ffmpeg_long.txt
+http://fairchildlabs.org/SeasonOne/ref/ffmpeg_long.txt
+
+To get from command line type:
+`$ ffmpeg --help`
 
 
 
-v4l2-ctl --list-devices
+### Record a Video
+
+
+####Record a single video
+`$ffmpeg -f v4l2 -framerate 30 -video_size 640x480 -i /dev/video0 output.mp4`
+
+####Record a video in 8 second segments
+
+`$ffmpeg -f v4l2 -framerate 30 -video_size 800x600 -i /dev/video0 -segment_time 8 -f segment output%03d.mp4`
+
+#### Covert video to Black & White
+
+`$ffmpeg -i output000.mp4 -vf extractplanes=y bw000.mp4`
+
+#### Reduce frame rate
+
+`$ffmpeg -i output000.mp4  -filter:v fps=2 slow.mp4`
+
+`$ffmpeg -i output000.mp4  -filter:v fps=10 -vf extractplanes=y slow_bw.mp4`
+
+
+
 
 
 v4l2-ctl --list-formats
