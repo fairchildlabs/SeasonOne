@@ -190,7 +190,6 @@ https://randomnerdtutorials.com/video-streaming-with-raspberry-pi-camera/
 
 https://www.instructables.com/How-to-Make-Raspberry-Pi-Webcam-Server-and-Stream-/
 
-
 apt-get install motion 
 
 
