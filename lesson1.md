@@ -62,7 +62,7 @@ http://pi.ip.addre.ss/
 
 `$ lsusb`
 
-Bus 003 Device 003: ID 328f:0073 EMEET HD Webcam eMeet C950
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
 
 `$ apt install fswebcam`
 
@@ -94,36 +94,30 @@ Look at the file it created
 >> v4l2-ctl --list-formats-ext > /var/www/html/usbresolution.txt
 
 Check it out in browser (for future reference)
-http://192.168.1.149/usbresolution.txt
+http://pi.ip.addre.ss/usbresolution.txt
+
+`$ mkdir /var/www/html/jpg_sizes`
+
+
+`$ fswebcam -r 640x480 --no-banner /var/www/html/jpg_sizes/640x480.jpg`
+`$ fswebcam -r 1920x1080 --no-banner /var/www/html/jpg_sizes/1920x1080.jpg`
+`$ fswebcam -r 1280x960 --no-banner /var/www/html/jpg_sizes/1280x960.jpg`
+`$ fswebcam -r 1280x720 --no-banner /var/www/html/jpg_sizes/1280x720.jpg`
+`$ fswebcam -r 1024x576 --no-banner /var/www/html/jpg_sizes/1024x576.jpg`
+`$ fswebcam -r 800x600 --no-banner /var/www/html/jpg_sizes/800x600.jpg`
+`$ fswebcam -r 640x360 --no-banner /var/www/html/jpg_sizes/640x360.jpg`
+`$ fswebcam -r 640x480 --no-banner /var/www/html/jpg_sizes/640x480.jpg`
+
+`$  ls -l /var/www/html/jpg_sizes
 
 `
-
-
-fswebcam -r 640x480 --no-banner /var/www/html/640x480.jpg
-fswebcam -r 1920x1080 --no-banner /var/www/html/1920x1080.jpg
-fswebcam -r 1280x960 --no-banner /var/www/html/1280x960.jpg
-fswebcam -r 1280x720 --no-banner /var/www/html/1280x720.jpg
-fswebcam -r 1024x576 --no-banner /var/www/html/1024x576.jpg
-fswebcam -r 800x600 --no-banner /var/www/html/800x600.jpg
-fswebcam -r 640x360 --no-banner /var/www/html/640x360.jpg
-fswebcam -r 640x480 --no-banner /var/www/html/640x480.jpg
-
-$ ls -l /var/www/html
-
-
--rw-r--r-- 1 root root 220087 Aug  4 14:28 1024x576.jpg
--rw-r--r-- 1 root root 318772 Aug  4 14:41 1280x720.jpg
--rw-r--r-- 1 root root 407712 Aug  4 14:26 1280x960.jpg
--rw-r--r-- 1 root root 677830 Aug  4 14:25 1920x1080.jpg
--rw-r--r-- 1 root root 185255 Aug  4 14:11 1.jpg
--rw-r--r-- 1 root root 130609 Aug  4 14:19 1s.jpg
--rw-r--r-- 1 root root 222889 Aug  4 14:11 2.jpg
--rw-r--r-- 1 root root 395652 Aug  4 14:12 3.jpg
--rw-r--r-- 1 root root 108512 Aug  4 14:29 640x360.jpg
--rw-r--r-- 1 root root 133886 Aug  4 14:29 640x480.jpg
--rw-r--r-- 1 root root 190412 Aug  4 14:29 800x600.jpg
--rw-r--r-- 1 root root  10701 Aug  4 12:52 index.html
--rw-r--r-- 1 root root   1197 Aug  4 14:23 usbresolution.txt
+-rw-r--r-- 1 root root 167068 Aug 19 12:10 1024x576.jpg
+-rw-r--r-- 1 root root 225826 Aug 19 12:10 1280x720.jpg
+-rw-r--r-- 1 root root 223167 Aug 19 12:10 1280x960.jpg
+-rw-r--r-- 1 root root 504530 Aug 19 12:09 1920x1080.jpg
+-rw-r--r-- 1 root root 110898 Aug 19 12:10 640x360.jpg
+-rw-r--r-- 1 root root 115160 Aug 19 12:10 640x480.jpg
+-rw-r--r-- 1 root root 152399 Aug 19 12:10 800x600.jpg
 `
 
 
