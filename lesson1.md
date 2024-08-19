@@ -117,7 +117,7 @@ http://pi.ip.addre.ss/usbresolution.txt
 
 `$  ls -l /var/www/html/jpg_sizes`
 
-`
+<pre>
 -rw-r--r-- 1 root root 167068 Aug 19 12:10 1024x576.jpg
 -rw-r--r-- 1 root root 225826 Aug 19 12:10 1280x720.jpg
 -rw-r--r-- 1 root root 223167 Aug 19 12:10 1280x960.jpg
@@ -125,7 +125,7 @@ http://pi.ip.addre.ss/usbresolution.txt
 -rw-r--r-- 1 root root 110898 Aug 19 12:10 640x360.jpg
 -rw-r--r-- 1 root root 115160 Aug 19 12:10 640x480.jpg
 -rw-r--r-- 1 root root 152399 Aug 19 12:10 800x600.jpg
-`
+<pre>
 
 
 //look on browser
