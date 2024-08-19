@@ -58,7 +58,7 @@ Test it, put the pi address in PC browser
 
 http://pi.ip.addre.ss/
 
-#11. Shutdown PI and install USB Camera (video.....)
+##11. Shutdown PI and install USB Camera (video.....)
 
 `$ lsusb`
 
@@ -129,7 +129,7 @@ http://pi.ip.addre.ss/usbresolution.txt
 
 
 //look on browser
-http://192.168.1.149/1920x1080.jpg
+http://pi.ip.addre.ss/jpg_sizes/1920x1080.jpg
 
 Make a spreadsheet  (figure out about https).
 http://fairchildlabs.org/early/resolution.xlsx
@@ -144,9 +144,6 @@ https://www.ffmpeg.org/ffmpeg.html
 
 Help Files 
 
-
-
-
 http://fairchildlabs.org/SeasonOne/ref/ffmpeg.txt
 http://fairchildlabs.org/SeasonOne/ref/ffmpeg_long.txt
 http://fairchildlabs.org/SeasonOne/ref/ffmpeg_long.txt
@@ -155,12 +152,33 @@ To get from command line type:
 `$ ffmpeg --help`
 
 
+##13. Record Videos
 
-### Record a Video
+`$ mkdir /var/www/html/video_13/`
 
 
 ####Record a single video
-`$ffmpeg -f v4l2 -framerate 30 -video_size 640x480 -i /dev/video0 output.mp4`
+`$ ffmpeg -f v4l2 -framerate 30 -video_size 640x480 -i /dev/video0 /var/www/html/video_13/640x480.mp4`
+<CTRL-C> to Stop
+http://pi.ip.addre.ss/video_13/640x480.mp4
+
+
+####Record a single video with sound
+
+##### Get the card # of USB Audio (Webcam) [card 2: in example]
+`$ arecord -l`
+<pre>
+
+**** List of CAPTURE Hardware Devices ****
+card 2: W4DS [W4DS], device 0: USB Audio [USB Audio]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+</pre>
+##### Record video and audio in same capture
+`$ ffmpeg -f alsa -ac 2 -i hw:2 -f v4l2 -framerate 30 -video_size 640x480 -i /dev/video0 /var/www/html/video_13/640x480_sound.mp4`
+
+http://pi.ip.addre.ss/video_13/640x480_sound.mp4
+
 
 ####Record a video in 8 second segments
 
