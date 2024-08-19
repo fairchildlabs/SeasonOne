@@ -91,7 +91,7 @@ Look at the file it created
 
 ##12. Get more detail about camera
 
->> v4l2-ctl --list-formats-ext > /var/www/html/usbresolution.txt
+`$ v4l2-ctl --list-formats-ext > /var/www/html/usbresolution.txt`
 
 Check it out in browser (for future reference)
 http://pi.ip.addre.ss/usbresolution.txt
@@ -100,15 +100,22 @@ http://pi.ip.addre.ss/usbresolution.txt
 
 
 `$ fswebcam -r 640x480 --no-banner /var/www/html/jpg_sizes/640x480.jpg`
+
 `$ fswebcam -r 1920x1080 --no-banner /var/www/html/jpg_sizes/1920x1080.jpg`
+
 `$ fswebcam -r 1280x960 --no-banner /var/www/html/jpg_sizes/1280x960.jpg`
+
 `$ fswebcam -r 1280x720 --no-banner /var/www/html/jpg_sizes/1280x720.jpg`
+
 `$ fswebcam -r 1024x576 --no-banner /var/www/html/jpg_sizes/1024x576.jpg`
+
 `$ fswebcam -r 800x600 --no-banner /var/www/html/jpg_sizes/800x600.jpg`
+
 `$ fswebcam -r 640x360 --no-banner /var/www/html/jpg_sizes/640x360.jpg`
+
 `$ fswebcam -r 640x480 --no-banner /var/www/html/jpg_sizes/640x480.jpg`
 
-`$  ls -l /var/www/html/jpg_sizes
+`$  ls -l /var/www/html/jpg_sizes`
 
 `
 -rw-r--r-- 1 root root 167068 Aug 19 12:10 1024x576.jpg
