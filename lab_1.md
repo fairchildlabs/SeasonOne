@@ -1,7 +1,7 @@
 #Lesson One
 
 ##1. Install micro-SD card.
-##2. Plug in keyboard, mouse and video.
+##2. Install video screen, keyboard, mouse.
 ##3. Enable SSH 
 To enable SSH on a Raspberry Pi using the GUI, you can do the following:
 Click the Raspberry Pi logo in the top-left corner
@@ -13,6 +13,11 @@ You can also enable SSH using the Raspberry P
 ##4. Get the IP Address (referred to below as pi.ip.addre.ss)
 `$ ip address`
 ##5. Set root password
+
+```
+$A great way
+```
+
 
 Open Terminal
 
