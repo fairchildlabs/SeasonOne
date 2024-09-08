@@ -24,11 +24,13 @@ TEXT_COL = (255, 255, 255)
 #load button images
 record_img = pygame.image.load("images/rec-button.png").convert_alpha()
 stop_img = pygame.image.load("images/stop-button.png").convert_alpha()
+scoot_img = pygame.image.load("images/scoot.png").convert_alpha()
 
 
 #create button instances
 record_button = button.Button(250, 125, record_img, .75)
 stop_button = button.Button(250, 125, stop_img, .75)
+scoot_button = button.Button(0, 0, scoot_img, .25)
 
 def draw_text(text, font, text_col, x, y):
   img = font.render(text, True, text_col)
@@ -46,14 +48,15 @@ while run:
      if record_button.draw(screen):
         menu_state = "record"
         if not (process is None):
-            process.send_signal(signal.CTRL_C_EVENT)
-            output, error = process.communicate()
+  #          process.send_signal(signal.CTRL_C_EVENT)
+  #          output, error = process.communicate()
             process = None
         
   else: 
      if stop_button.draw(screen):
         if (process is None):
-            process = subprocess.Popen("./record.sh", stdout=subprocess.PIPE, shell=True)
+ #           process = subprocess.Popen("./record.sh", stdout=subprocess.PIPE, shell=True)
+            if scoot_button.draw(screen)
             menu_state = "stop"
 
 
