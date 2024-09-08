@@ -50,7 +50,7 @@ while run:
         #git update-index --chmod=+x
 
         #bashCommand = ".\record.sh"
-        process = subprocess.Popen(".\record.sh", stdout=subprocess.PIPE)
+        process = subprocess.Popen("./record.sh", stdout=subprocess.PIPE)
         #output, error = process.communicate()
 
 
