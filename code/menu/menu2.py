@@ -1,5 +1,6 @@
 import pygame
 import button
+import subprocess
 
 pygame.init()
 
@@ -35,6 +36,7 @@ def draw_text(text, font, text_col, x, y):
 
 #game loop
 run = True
+process = null
 while run:
 
   screen.fill((255, 255, 255))
@@ -45,6 +47,13 @@ while run:
         menu_state = "record"
   else: 
      if stop_button.draw(screen):
+
+        bashCommand = ".\record.sh"
+        process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+        #output, error = process.communicate()
+
+
+
         menu_state = "stop"
 
 

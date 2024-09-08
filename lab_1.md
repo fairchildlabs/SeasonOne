@@ -218,13 +218,30 @@ FROM PC PUTTY
 FROM PC PUTTY
 `$ cd ~`
 `$ cd SeasonOne/code/menu`
-`$ md /var/www/html/video_14/`
+`$ mkdir /var/www/html/video_15/`
 `$ nano record.sh`
 LOOK AT SCRIPT
 <CTRL-X> to Exit
 `$ ./record.sh`
 EXPLAIN Permision denied
 `$ chmod +x record.sh`
+`$ ./record.sh`
+RECORD SOME VIDEO <CTRL-X> to stop
+WATCH it in browser
+http://192.168.1.157/video_15/640x480.mp4
+
+
+##16. Test Menu2
+
+
+
+ON PI TERMINAL
+`$ su root`
+TYPE LAB PASSWORD
+`$ cd ~`
+`$ cd SeasonOne/code/menu`
+`$ python menu2.py`
+
 
 
 
