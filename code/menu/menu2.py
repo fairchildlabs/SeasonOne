@@ -36,7 +36,7 @@ def draw_text(text, font, text_col, x, y):
 
 #game loop
 run = True
-process = null
+process = None
 while run:
 
   screen.fill((255, 255, 255))
