@@ -1,4 +1,4 @@
-
+7
 #185`$ffmpeg -f v4l2 -framerate 30 -video_size 800x600 -i /dev/video0 -segment_time 8 -f segment output%03d.mp4`
 
 $ffmpeg -f v4l2 -framerate 30 -video_size 800x600 -i /dev/video0 -segment_time 185 -f segment output%03d.mp4`
@@ -53,4 +53,49 @@ cd pgs
 https://pygame-menu.readthedocs.io/en/latest/
 
 pip install pygame-menu -U
+
+
+
+
+
+####Record a video in 8 second segments
+
+`$ffmpeg -f v4l2 -framerate 30 -video_size 800x600 -i /dev/video0 -segment_time 8 -f segment output%03d.mp4`
+
+#### Covert video to Black & White
+
+`$ffmpeg -i output000.mp4 -vf extractplanes=y bw000.mp4`
+
+#### Reduce frame rate
+
+`$ffmpeg -i output000.mp4  -filter:v fps=2 slow.mp4`
+
+`$ffmpeg -i output000.mp4  -filter:v fps=10 -vf extractplanes=y slow_bw.mp4`
+
+
+
+
+
+v4l2-ctl --list-formats
+
+
+/****************************************************
+video streaming
+
+https://randomnerdtutorials.com/video-streaming-with-raspberry-pi-camera/
+
+
+https://www.instructables.com/How-to-Make-Raspberry-Pi-Webcam-Server-and-Stream-/
+
+apt-get install motion 
+
+
+
+
+
+
+
+
+
+ffmpeg -f dshow -framerate 15 -i video="USB Video Device":audio="Microphone (USB Audio Device)" -s 640x360 -c:v libx264 -g 15 -c:a aac -preset veryfast -segment_time 10 -segment_wrap 24 -f segment %03d.ts
 

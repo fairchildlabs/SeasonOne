@@ -14,10 +14,6 @@ You can also enable SSH using the Raspberry P
 `$ ip address`
 ##5. Set root password
 
-```
-$A great way
-```
-
 
 Open Terminal
 
@@ -167,9 +163,7 @@ To get from command line type:
 <CTRL-C> to Stop
 http://pi.ip.addre.ss/video_13/640x480.mp4
 
-
 ####Record a single video with sound
-
 ##### Get the card # of USB Audio (Webcam) [card 2: in example]
 `$ arecord -l`
 <pre>
@@ -184,49 +178,42 @@ card 2: W4DS [W4DS], device 0: USB Audio [USB Audio]
 
 http://pi.ip.addre.ss/video_13/640x480_sound.mp4
 
+##14. Build Menu
+### Use git to clone repository
+`$ cd ~`
+`$ git clone https://github.com/fairchildlabs/SeasonOne.git`
 
-####Record a video in 8 second segments
+ON PI TERMINAL
+`$ su root`
+TYPE LAB PASSWORD
+`$ cd ~`
+`$ cd SeasonOne/code/menu`
+`$ python menu.py`
 
-`$ffmpeg -f v4l2 -framerate 30 -video_size 800x600 -i /dev/video0 -segment_time 8 -f segment output%03d.mp4`
-
-#### Covert video to Black & White
-
-`$ffmpeg -i output000.mp4 -vf extractplanes=y bw000.mp4`
-
-#### Reduce frame rate
-
-`$ffmpeg -i output000.mp4  -filter:v fps=2 slow.mp4`
-
-`$ffmpeg -i output000.mp4  -filter:v fps=10 -vf extractplanes=y slow_bw.mp4`
-
-
-
-
-
-v4l2-ctl --list-formats
+Look at the code in menu.py
+FROM PC PUTTY
+`$ cd ~`
+`$ cd SeasonOne/code/menu`
+`$ nano menu.py`
 
 
-/****************************************************
-video streaming
+##14. Build Menu
+### Use git to clone repository
+`$ cd ~`
+`$ git clone https://github.com/fairchildlabs/SeasonOne.git`
 
-https://randomnerdtutorials.com/video-streaming-with-raspberry-pi-camera/
+ON PI TERMINAL or FROM PC PUTTY
+`$ su root`
+TYPE LAB PASSWORD
+`$ cd ~`
+`$ cd SeasonOne/code/menu`
+`$ python menu.py`
 
-
-https://www.instructables.com/How-to-Make-Raspberry-Pi-Webcam-Server-and-Stream-/
-
-apt-get install motion 
-
-
-
-
-
-
-
-
-
-ffmpeg -f dshow -framerate 15 -i video="USB Video Device":audio="Microphone (USB Audio Device)" -s 640x360 -c:v libx264 -g 15 -c:a aac -preset veryfast -segment_time 10 -segment_wrap 24 -f segment %03d.ts
-
-
+Look at the code in menu.py
+FROM PC PUTTY
+`$ cd ~`
+`$ cd SeasonOne/code/menu`
+`$ nano menu.py`
 
 
 
