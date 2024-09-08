@@ -45,16 +45,18 @@ while run:
     #draw pause screen buttons
      if record_button.draw(screen):
         menu_state = "record"
+        if not (process is None):
+            process.kill()
+            output, error = process.communicate()
+            process = None
+        
   else: 
      if stop_button.draw(screen):
         #git update-index --chmod=+x
 
         #bashCommand = ".\record.sh"
         process = subprocess.Popen("./record.sh", stdout=subprocess.PIPE)
-        output, error = process.communicate()
-
-
-
+        #output, error = process.communicate()
         menu_state = "stop"
 
 
