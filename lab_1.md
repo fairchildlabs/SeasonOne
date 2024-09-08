@@ -214,6 +214,11 @@ FROM PC PUTTY
 `$ cd ~`
 `$ cd SeasonOne/code/menu`
 `$ nano menu.py`
+##15. Test Bash script
+FROM PC PUTTY
+`$ cd ~`
+`$ cd SeasonOne/code/menu`
+`$ nano record.sh`
 
 
 
