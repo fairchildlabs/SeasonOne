@@ -55,7 +55,6 @@ while run:
 
         if (process is None):
             process = subprocess.Popen("./record.sh", stdout=subprocess.PIPE, shell=True)
-            #output, error = process.communicate()
             menu_state = "stop"
 
 
@@ -66,6 +65,8 @@ while run:
     if event.type == pygame.KEYDOWN:
       if event.key == pygame.K_SPACE:
         game_paused = True
+      if event.key == pygame.K_ESCAPE:
+        run = False
     if event.type == pygame.QUIT:
       run = False
 
