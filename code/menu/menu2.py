@@ -46,18 +46,17 @@ while run:
      if record_button.draw(screen):
         menu_state = "record"
         if not (process is None):
-            process.kill()
+            process.send_signal(CTRL_C_EVENT)
             output, error = process.communicate()
             process = None
         
   else: 
      if stop_button.draw(screen):
-        #git update-index --chmod=+x
 
-        #bashCommand = ".\record.sh"
-        process = subprocess.Popen("./record.sh", stdout=subprocess.PIPE)
-        #output, error = process.communicate()
-        menu_state = "stop"
+        if (process is None):
+            process = subprocess.Popen("./record.sh", stdout=subprocess.PIPE, shell=True)
+            #output, error = process.communicate()
+            menu_state = "stop"
 
 
 
