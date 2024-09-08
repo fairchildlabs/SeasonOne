@@ -51,7 +51,7 @@ while run:
 
         #bashCommand = ".\record.sh"
         process = subprocess.Popen("./record.sh", stdout=subprocess.PIPE)
-        #output, error = process.communicate()
+        output, error = process.communicate()
 
 
 
