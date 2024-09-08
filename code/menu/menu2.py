@@ -56,8 +56,9 @@ while run:
      if stop_button.draw(screen):
         if (process is None):
  #           process = subprocess.Popen("./record.sh", stdout=subprocess.PIPE, shell=True)
-            if scoot_button.draw(screen)
-            menu_state = "stop"
+            if scoot_button.draw(screen):
+
+        menu_state = "stop"
 
 
 
