@@ -218,7 +218,13 @@ FROM PC PUTTY
 FROM PC PUTTY
 `$ cd ~`
 `$ cd SeasonOne/code/menu`
+`$ md /var/www/html/video_14/`
 `$ nano record.sh`
+LOOK AT SCRIPT
+<CTRL-X> to Exit
+`$ ./record.sh`
+EXPLAIN Permision denied
+`$ chmod +x record.sh`
 
 
 
