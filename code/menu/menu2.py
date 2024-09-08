@@ -47,9 +47,10 @@ while run:
         menu_state = "record"
   else: 
      if stop_button.draw(screen):
+        #git update-index --chmod=+x
 
-        bashCommand = ".\record.sh"
-        process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+        #bashCommand = ".\record.sh"
+        process = subprocess.Popen(".\record.sh", stdout=subprocess.PIPE)
         #output, error = process.communicate()
 
 
