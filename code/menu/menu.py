@@ -52,11 +52,13 @@ while run:
  
   #event handler
   for event in pygame.event.get():
-    if event.type == pygame.KEYDOWN:
-      if event.key == pygame.K_SPACE:
-        game_paused = True
-    if event.type == pygame.QUIT:
-      run = False
+     if event.type == pygame.KEYDOWN:
+       if event.key == pygame.K_SPACE:
+         run = False
+       if event.key == pygame.K_ESCAPE:
+         run = False
+     if event.type == pygame.QUIT:
+       run = False
 
   pygame.display.update()
 
