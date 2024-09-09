@@ -1,6 +1,11 @@
 import pygame
 import button
 import subprocess
+import os
+
+
+
+
 
 pygame.init()
 
@@ -47,18 +52,21 @@ while run:
     #draw pause screen buttons
      if record_button.draw(screen):
         menu_state = "record"
+        if (process is None):
+            process = subprocess.Popen("./record.sh", stdout=subprocess.PIPE, shell=true)
+            #process = subprocess.Popen("record.bat", stdout=subprocess.PIPE, shell=true)
+
+  else: 
+     if stop_button.draw(screen):
+        menu_state = "stop"
         if not (process is None):
             process.send_signal(signal.CTRL_C_EVENT)
             output, error = process.communicate()
             process = None
         
-  else: 
-     if stop_button.draw(screen):
-        menu_state = "stop"
-        if (process is None):
-            process = subprocess.Popen("./record.sh", stdout=subprocess.PIPE)
-            scoot_button.draw(screen)
-  
+ 
+            
+            
 
 
  
