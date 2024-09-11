@@ -61,6 +61,8 @@ Test it, put the pi address in PC browser
 
 http://pi.ip.addre.ss/
 
+apt install ffmpeg
+
 ##11. Shutdown PI and install USB Camera (video.....)
 
 `$ lsusb`

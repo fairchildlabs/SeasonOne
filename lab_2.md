@@ -92,8 +92,12 @@ apt-get install motion
 
 
 
+https://www.tomshardware.com/how-to/back-up-raspberry-pi-as-disk-image
 
 
+sudo dd if=/dev/mmcblk0 of=/media/astros/132C-BADB/myimg.img bs=1M
+
+https://www.raspberrypi.com/software/
 
 
 
