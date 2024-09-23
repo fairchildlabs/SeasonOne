@@ -246,3 +246,23 @@ TYPE LAB PASSWORD
 `$ cd SeasonOne/code/menu`
 `$ python menu2.py`
 
+
+ Map network drive (to make file copy easier)  Open Terminal (putty SSH with root/Astros.22) 
+    a. CMD> mkdir /root/perfshare
+    b. CMD> nano /etc/fstab
+       Add this line at : //10.238.18.110/perfshare /root/perfshare  cifs  credentials=/root/.perfsharecred,file_mode=0777,dir_mode=0777,noperm,iocharset=utf8 0       0
+    c. CMD > nano /root/.perfsharecred 
+    //NOTE:  creATE NEW FILE WITH NANO AND TYPE THE FOLLOWING, DON'T COPY/PASTE SOME CHARECTER ENCODING STUFF WILL 
+    //CAUSE IT NOT TO WORK
+
+
+//otis-fairchild-labs/labshare /var/www/html/labshare  cifs  credentials=/var/www/.labsharecred,file_mode=0777,dir_mode=0777,noperm,iocharset=utf8 0    
+ 
+    labshare (file://OTIS-FAIRCHILD-/labshare)
+
+       Add these lines:
+       username=Administrator
+	   password=Astros.22
+       domain=MCHP-MAIN
+    d. CMD> mount  -a
+

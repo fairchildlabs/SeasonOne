@@ -89,6 +89,7 @@ https://www.instructables.com/How-to-Make-Raspberry-Pi-Webcam-Server-and-Stream-
 
 apt-get install motion 
 
+sudo dd if=/dev/mmcblk0 of=/media/astros/6A1C95A11C9568B9/09124_pi_with_gym_wifi.img bs=1M status=progress
 
 
 
